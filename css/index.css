@@ -134,3 +134,17 @@ button[disabled=disabled], button:disabled {
 .paciente-invalido{
 	background-color: lightcoral;
 }
+
+.fade-out{
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#filtrar-tabela {
+	width: 400px;
+	margin-bottom: 1em;
+}
+
+.invisible {
+	display: none;
+}

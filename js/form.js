@@ -4,6 +4,12 @@ botaoAdicionar.addEventListener("click", function (e) {
     var form = document.querySelector("#form-adiciona");
     var paciente = getFormData(form);
     var pacienteTr = incrementsTable(paciente);
+
+    if (!validaPaciente(paciente)) {
+        alert("Os dados fornecidos do paciente são inválidos!");
+        return;
+    }
+
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr);
     form.reset();
@@ -34,10 +40,20 @@ function incrementsTable (paciente) {
     return pacienteTr;
 }
 
+function addPacienteOnTable (paciente) {
+    var pacienteTr = incrementsTable(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 function insertClassInfo (pacienteData, info) {
     var td = document.createElement("td");
     td.textContent = pacienteData;
     td.classList.add(info);
 
     return td;
+}
+
+function validaPaciente (paciente) {
+    return ((validaAltura(paciente.altura) || validaPeso(paciente.peso))&& paciente.nome.length > 0);
 }

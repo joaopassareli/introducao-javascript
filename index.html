@@ -2,7 +2,7 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Aparecida Nutrição</title>
+		<title>Bruna Fernandes Nutrição</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
@@ -17,6 +17,10 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
+
+				<label for="filtrar-tabela">Pesquisar</label>
+				<input type="text" name="filtro" id="filtrar-tabela">
+
 				<table>
 					<thead>
 						<tr>
@@ -54,7 +58,7 @@
 
 						<tr class="paciente">
 							<td class="info-nome">Douglas</td>
-							<td class="info-peso">8885</td>
+							<td class="info-peso">85</td>
 							<td class="info-altura">1.73</td>
 							<td class="info-gordura">24</td>
 							<td class="info-imc">0</td>
@@ -68,6 +72,9 @@
 						</tr>
 					</tbody>
 				</table>
+				
+				<button id="importar-paciente" class="botao bto-principal">Importar Pacientes</button>
+				<span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
 
 			</section>
 		</main>
@@ -99,4 +106,7 @@
 	</body>
 	<script src="js/calcula-imc.js"></script>
 	<script src="js/form.js"></script>
+	<script src="js/remover.js"></script>
+	<script src="js/filtrar.js"></script>
+	<script src="js/importar-pacientes.js"></script>
 </html>
